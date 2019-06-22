@@ -70,6 +70,9 @@ class BlocklyToolbox extends React.Component {
   });
 
   render = () => {
+    console.log("this.props.categories: ", this.props.categories);
+    console.log("hehej");
+    console.log("this.props.blocks", this.props.blocks)
     if (this.props.categories) {
       return (
         <xml style={{ display: 'none' }} ref={(node) => { this.rootNode = node; }}>

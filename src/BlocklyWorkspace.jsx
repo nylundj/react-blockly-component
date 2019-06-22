@@ -127,6 +127,7 @@ class BlocklyWorkspace extends React.Component {
     // We have to fool Blockly into setting up a toolbox with categories initially;
     // otherwise it will refuse to do so after we inject the real categories into it.
     let dummyToolboxContent;
+    console.log("TOOLBOXMODE: ", this.props.toolboxMode)
     if (this.props.toolboxMode === 'CATEGORIES') {
       dummyToolboxContent = (
         <category name="Dummy toolbox" />
