@@ -1,6 +1,6 @@
 const INITIAL_XML = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
 
-const INITIAL_TOOLBOX_XML = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">\n' +
+const INITIAL_TOOLBOX_XML_OLD = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">\n' +
   '  <category name="Logic" colour="#5C81A6">\n' +
   '    <block type="controls_if"></block>\n' +
   '    <block type="logic_compare">\n' +
@@ -22,7 +22,7 @@ const INITIAL_TOOLBOX_XML = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolb
   '</xml>';
 
 
-const INITIAL_TOOLBOX_XML_CUSTOM = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">\n' +
+const INITIAL_TOOLBOX_XML = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">\n' +
   '  <category name="Logic" colour="#5C81A6">\n' +
   '    <block type="controls_if"></block>\n' +
   '    <block type="logic_compare">\n' +
@@ -31,7 +31,16 @@ const INITIAL_TOOLBOX_XML_CUSTOM = '<xml xmlns="http://www.w3.org/1999/xhtml" id
   '  </category>\n' +
   '</xml>';
 
-const INITIAL_TOOLBOX_CATEGORIES = [
+//  '  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>\n' +
+
+const INITIAL_TOOLBOX_XML_CUSTOM_NO_CATEGORIES = '<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">\n' +
+  '    <block type="controls_if"></block>\n' +
+  '    <block type="logic_compare">\n' +
+  '      <field name="OP">EQ</field>\n' +
+  '    </block>\n' +
+  '</xml>';
+
+const INITIAL_TOOLBOX_CATEGORIES_OLD = [
   {
     name: 'Controls',
     blocks: [
@@ -84,6 +93,8 @@ const INITIAL_TOOLBOX_CATEGORIES = [
     ],
   },
 ];
+
+const INITIAL_TOOLBOX_CATEGORIES = [{}];
 
 const ConfigFiles = {
   INITIAL_XML,

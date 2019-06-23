@@ -111,6 +111,7 @@ class BlocklyEditor extends React.Component {
     let toolboxMode;
     if (this.props.toolboxCategories) {
       toolboxMode = 'CATEGORIES';
+      console.log("KOMMER IN I IF props")
     } else if (this.props.toolboxBlocks) {
       toolboxMode = 'BLOCKS';
     }

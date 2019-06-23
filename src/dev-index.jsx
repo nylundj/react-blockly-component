@@ -10,33 +10,16 @@ class TestEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toolboxCategories: parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML),
+      toolboxCategories: null, //[] //parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML),
+      toolboxBlocks: parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML),
     };
+    console.log("fsgdfgdfg: ", this.state);
   }
 
   componentDidMount = () => {
     window.setTimeout(() => {
       this.setState({
-        toolboxCategories: this.state.toolboxCategories.concat([
-          {
-            name: 'Text2',
-            blocks: [
-              { type: 'text' },
-              {
-                type: 'text_print',
-                values: {
-                  TEXT: {
-                    type: 'text',
-                    shadow: true,
-                    fields: {
-                      TEXT: 'abc',
-                    },
-                  },
-                },
-              },
-            ],
-          },
-        ]),
+        toolboxCategories: null
       });
     }, 2000);
   }
@@ -51,7 +34,8 @@ class TestEditor extends React.Component {
 
   render = () => (
     <ReactBlocklyComponent.BlocklyEditor
-      toolboxCategories={this.state.toolboxCategories}
+      //toolboxCategories={this.state.toolboxCategories}
+      toolboxBlocks={this.state.toolboxBlocks}
       workspaceConfiguration={{
         grid: {
           spacing: 20,
