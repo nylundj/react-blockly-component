@@ -71,13 +71,16 @@ function transformed(result) {
   const filteredResult = [];
   const xml = result["xml"];
   const categories = xml["category"];
+  console.log("CATEGORY LENGTH:", categories.length);
   for (let i = 0; i < categories.length; i++) {
     const c = categories[i];
     const cNew = {};
     cNew.name = c.name;
     cNew.colour = c.colour;
     cNew.custom = c.custom;
+    console.log("kommer 1")
     if (c.block) {
+      console.log("kommer 2")
       cNew.blocks = parseBlocks(c.block);
     }
     filteredResult.push(cNew);
@@ -88,6 +91,7 @@ function transformed(result) {
 
 function parseBlocks(blocks) {
   let arr = ensureArray(blocks);
+  console.log("kommer in til parseBlocks!!")
 
   const res = [];
   arr.forEach(block => {

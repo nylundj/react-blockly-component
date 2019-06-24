@@ -10,10 +10,12 @@ class TestEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      test: 0,
       toolboxCategories: null, //[] //parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML),
-      toolboxBlocks: parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML),
+      toolboxBlocks: parseWorkspaceXml(ConfigFiles.INITIAL_TOOLBOX_XML)[0].blocks,
     };
-    console.log("fsgdfgdfg: ", this.state);
+    console.log("fsgdfgdfg: ", this.state.toolboxBlocks);
+    console.log("test", this.state.test);
   }
 
   componentDidMount = () => {
@@ -35,6 +37,7 @@ class TestEditor extends React.Component {
   render = () => (
     <ReactBlocklyComponent.BlocklyEditor
       //toolboxCategories={this.state.toolboxCategories}
+      toolboxCategories= {null}
       toolboxBlocks={this.state.toolboxBlocks}
       workspaceConfiguration={{
         grid: {
