@@ -39,15 +39,22 @@ class TestEditor extends React.Component {
       //toolboxCategories={this.state.toolboxCategories}
       toolboxCategories= {null}
       toolboxBlocks={this.state.toolboxBlocks}
-      workspaceConfiguration={{
-        grid: {
-          spacing: 20,
-          length: 3,
-          colour: '#ccc',
-          snap: true,
-        },
-      }}
-      initialXml={ConfigFiles.INITIAL_XML}
+      workspaceConfiguration={
+        {
+          toolboxPosition: "end",
+          horizontalLayout: true,
+          //media: '../media/',
+          sounds: false,
+          trashcan: true, //needs to be at the bottom right
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          }
+        }
+      }
+      initialXml={ConfigFiles.INITIAL_XML} //!!SHOW CODE
       wrapperDivClassName="fill-height"
       workspaceDidChange={this.workspaceDidChange}
     />

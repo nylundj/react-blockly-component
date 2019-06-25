@@ -42,6 +42,10 @@ class BlocklyWorkspace extends React.Component {
     this.state = {
       workspace: null,
       xml: this.props.initialXml,
+      //toolboxPosition: "end", //!!
+      //horizontalLayout: true,
+      //sounds: false,
+      //trashcan: true,
     };
   }
 
